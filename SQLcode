@@ -1,0 +1,42 @@
+Create SonnyShines.customer (
+CustomerID INT NOT NULL,
+FirstName VARCHAR(20) NOT NULL,
+LastName VARCHAR(20) NOT NULL,
+Phone INT 10 NOT NULL,
+Email VARCHAR(20) NOT Null,
+Request DATE NOT Null,
+PRIMARY KEY (CustomerID));
+FOREIGN KEY(buildingID) REFERENCES
+SonnyShines.building(buildingID));
+
+Create SonnyShines.building (
+buildingID INT NOT NULL,
+Address VARCHAR(30) NOT NULL,
+Num1stWindow VARCHAR(3) NOT NULL,
+Num2nsWindow VARCHAR(3) NOT NULL,
+Num3rd_moreWindow VARCHAR(3) NOT NULL,
+PRIMARY KEY (buildingID),
+FOREIGN KEY (CustID) REFERENCES
+SonnyShines.customer(CustomerID));
+
+Create SonnyShines.costs (
+floor INT NOT NULL,
+COST Decimal(4,2) NOT NULL,
+PRIMARY KEY (floor));
+
+Create SonnyShines.quote (
+quoteID INT NOT NULL,
+1stCost DECIMAL(6,2) NOT NULL,
+2ndCost DECIMAL(6,2) NOT NULL,
+3rdCost DECIMAL(6,2) NOT NULL,
+totalCost Decimal (6,2) Not NULL,
+ServiceTime TIME Not Null,
+PRIMARY KEY (serviceID));
+FOREIGN KEY (CustID) REFERENCES
+SonnyShines.customer(CustomerID),
+FOREIGN KEY (floorNUM) REFERENCES
+SonnyShines.costs(floor));
+
+
+
+

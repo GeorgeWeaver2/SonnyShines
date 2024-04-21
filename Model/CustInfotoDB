@@ -1,0 +1,4 @@
+<?php
+
+$Num3plusWindows = filter_input($type, 'TNum_3rdplus_FL_windows',FILTER_INPUT_INT);
+?>
